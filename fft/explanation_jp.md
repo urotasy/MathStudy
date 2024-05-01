@@ -48,8 +48,7 @@ c_{1} \\
 c_{2} \\
 \vdots \\
 c_{n}
-\end{pmatrix}
-=
+\end{pmatrix}=
 \begin{pmatrix}
 \int_{a}^{b}\phi_{1}(x)f(x)\mathrm{d}x \\
 \int_{a}^{b}\phi_{2}(x)f(x)\mathrm{d}x \\
@@ -67,7 +66,7 @@ $$
 
 ## 直交関数系で近似するときの正規方程式
 
-ある関数 $f(x)$ を直交関数系 $\phi_{0}(x), \phi_{1}(x), \dots, \phi_{n}(x)$ で $f(x) \approx c_{1}\phi_{1}(x) + c_{2}\phi_{2}(x) + \dots + c_{n}\phi_{n}(x)$ のように近似するとき、$\int_{a}^{b}\phi_{i}(x)\phi_{j}(x)\mathrm{d}x = 0,\quad i \ne j$ が成り立つので前述した正規方程式は以下のように変形できる。
+ある関数 $f(x)$ を直交関数系 $\phi_{0}(x), \phi_{1}(x), \dots, \phi_{n}(x)$ で $f(x) \approx c_{1}\phi_{1}(x) + c_{2}\phi_{2}(x) + \dots + c_{n}\phi_{n}(x)$ のように近似するとき、 $\int_{a}^{b}\phi_{i}(x)\phi_{j}(x)\mathrm{d}x = 0,\quad i \ne j$ が成り立つので前述した正規方程式は以下のように変形できる。
 
 $$
 \begin{pmatrix}
@@ -81,8 +80,7 @@ c_{1} \\
 c_{2} \\
 \vdots \\
 c_{n}
-\end{pmatrix}
-=
+\end{pmatrix}=
 \begin{pmatrix}
 \int_{a}^{b}\phi_{1}(x)f(x)\mathrm{d}x \\
 \int_{a}^{b}\phi_{2}(x)f(x)\mathrm{d}x \\
@@ -101,7 +99,7 @@ $$
 
 唐突ではあるが、ここで区間 $[-\pi, \pi]$ における $\frac{1}{2},\quad \cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ について考えると、以下のようにしてこれらの関数が直交関数系であることを示すことができる。
 
-$\cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ は周期 $2\pi$ の周期関数なので、$\int_{-\pi}^{\pi}\cos{kx}\mathrm{d}x$, $\int_{-\pi}^{\pi}\sin{kx}\mathrm{d}x$ は 0 である。このことから、
+$\cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ は周期 $2\pi$ の周期関数なので、 $\int_{-\pi}^{\pi}\cos{kx}\mathrm{d}x$, $\int_{-\pi}^{\pi}\sin{kx}\mathrm{d}x$ は 0 である。このことから、
 
 $$
 \int_{-\pi}^{\pi}\frac{1}{2}\cos{kx}\mathrm{d}x = 0 \\
@@ -152,27 +150,40 @@ $$
 a_{0}
 &= \frac{\int_{-\pi}^{\pi}\frac{1}{2}f(x)\mathrm{d}x}{\int_{-\pi}^{\pi}(\frac{1}{2})^2\mathrm{d}x} \\
 &= \frac{\frac{1}{2}\int_{-\pi}^{\pi}f(x)\mathrm{d}x}{\frac{\pi}{2}} \\
-&= \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\mathrm{d}x, \\
+&= \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\mathrm{d}x
+\end{align*}
+$$
+
+$$
+\begin{align*}
 a_{k}
 &= \frac{\int_{-\pi}^{\pi}\cos{kx}f(x)\mathrm{d}x}{\int_{-\pi}^{\pi}(\cos{kx})^2\mathrm{d}x} \\
 &= \frac{\int_{-\pi}^{\pi}\cos{kx}f(x)\mathrm{d}x}{\frac{1}{2}\int_{-\pi}^{\pi}(1 + \cos{2kx})\mathrm{d}x} \\
 &= \frac{\int_{-\pi}^{\pi}\cos{kx}f(x)\mathrm{d}x}{\frac{1}{2}2\pi} \\
-&= \frac{1}{\pi}\int_{-\pi}^{\pi}\cos{kx}f(x)\mathrm{d}x, \\
+&= \frac{1}{\pi}\int_{-\pi}^{\pi}\cos{kx}f(x)\mathrm{d}x
+\end{align*}
+$$
+
+$$
+\begin{align*}
 b_{k}
 &= \frac{\int_{-\pi}^{\pi}\sin{kx}f(x)\mathrm{d}x}{\int_{-\pi}^{\pi}(\sin{kx})^2\mathrm{d}x} \\
 &= \frac{\int_{-\pi}^{\pi}\sin{kx}f(x)\mathrm{d}x}{\frac{1}{2}\int_{-\pi}^{\pi}(1 - \cos{2kx})\mathrm{d}x} \\
 &= \frac{\int_{-\pi}^{\pi}\sin{kx}f(x)\mathrm{d}x}{\frac{1}{2}2\pi} \\
-&= \frac{1}{\pi}\int_{-\pi}^{\pi}\sin{kx}f(x)\mathrm{d}x, \\
+&= \frac{1}{\pi}\int_{-\pi}^{\pi}\sin{kx}f(x)\mathrm{d}x
 \end{align*}
 $$
 
 すなわち、区間 $[-\pi, \pi]$ 上の連続関数 $f(x)$ は以下のように近似できる。
 
 $$
-f(x) = \frac{a_{0}}{2} + \sum_{k=1}^{\infty}{(a_{k}\cos{kx} + b_{k}\sin{kx})} \\
+f(x) = \frac{a_{0}}{2} + \sum_{k=1}^{\infty}{(a_{k}\cos{kx} + b_{k}\sin{kx})}
+$$
+
+$$
 a_{0} = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\mathrm{d}x,\quad
 a_{k} = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos{kx}\mathrm{d}x,\quad
 b_{k} = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin{kx}\mathrm{d}x
 $$
 
-この $\frac{1}{2},\quad \cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ を用いた直交関数展開をフーリエ級数と呼び、$a_{0}, a_{k}, b_{k}$ の係数をフーリエ係数と呼ぶ。
+この $\frac{1}{2},\quad \cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ を用いた直交関数展開をフーリエ級数と呼び、 $a_{0}, a_{k}, b_{k}$ の係数をフーリエ係数と呼ぶ。
