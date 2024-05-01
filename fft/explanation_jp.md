@@ -191,7 +191,7 @@ $$
 これまでは区間 $[-\pi, \pi]$ での $\frac{1}{2},\quad \cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ を用いた直交関数展開を考えてきたが、ここで一般の幅 $T$ の区間 $[-\frac{T}{2}, \frac{T}{2}]$ でのフーリエ級数を考える。上式において $x = \frac{2\pi t}{T}$ と置くと、 $-\pi \leqq x \leqq \pi$ のとき $-\frac{T}{2} \leqq t \leqq \frac{T}{2}$、 $\mathrm{d}x = \frac{2\pi}{T}\mathrm{d}t$ となる。さらに範囲 $[-\frac{T}{2}, \frac{T}{2}]$ において $\omega_{o} = \frac{2\pi}{T}$ と置くと $x = \omega_{o}t,\quad dx = \omega_{o}dt$ となり、
 
 $$
-f(t) = \frac{a_{0}}{2} + \sum_{k=1}^{\infin}(a_{k}\cos{k\omega_{o}t + b_{k}\sin{k\omega_{o}t}})
+f(t) = \frac{a_{0}}{2} + \sum_{k=1}^{\infty}(a_{k}\cos{k\omega_{o}t + b_{k}\sin{k\omega_{o}t}})
 $$
 
 $$
@@ -228,9 +228,9 @@ $$
 $$
 \begin{align*}
 f(t)
-&= \frac{a_{0}}{2} + \sum_{k=1}^{\infin}\left(a_{k}\frac{e^{ik\omega_{o}t} + e^{-ik\omega_{o}t}}{2} + b_{k}\frac{e^{ik\omega_{o}t} - e^{-ik\omega_{o}t}}{2i}\right) \\
-&= \frac{a_{0}}{2} + \frac{1}{2}\sum_{k=1}^{\infin}\left((a_{k} - ib_{k})e^{ik\omega_{o}t}+(a_{k} + ib_{k})e^{-ik\omega_{o}t}\right) \\
-&= \sum_{-\infin}^{\infin}C_{k}e^{ik\omega_{o}t}
+&= \frac{a_{0}}{2} + \sum_{k=1}^{\infty}\left(a_{k}\frac{e^{ik\omega_{o}t} + e^{-ik\omega_{o}t}}{2} + b_{k}\frac{e^{ik\omega_{o}t} - e^{-ik\omega_{o}t}}{2i}\right) \\
+&= \frac{a_{0}}{2} + \frac{1}{2}\sum_{k=1}^{\infty}\left((a_{k} - ib_{k})e^{ik\omega_{o}t}+(a_{k} + ib_{k})e^{-ik\omega_{o}t}\right) \\
+&= \sum_{-\infty}^{\infty}C_{k}e^{ik\omega_{o}t}
 \end{align*}
 $$
 
@@ -271,7 +271,7 @@ $$
 すなわち、以下のようにまとめられる。
 
 $$
-f(t) = \sum_{-\infin}^{\infin}C_{k}e^{ik\omega_{o}t},\quad C_{k} = \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t
+f(t) = \sum_{-\infty}^{\infty}C_{k}e^{ik\omega_{o}t},\quad C_{k} = \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t
 $$
 
 $C_{k}$ を複素フーリエ係数と呼ぶ。
