@@ -95,7 +95,7 @@ $$
 c_{i} = \frac{\int_{a}^{b}\phi_{i}(x)f(x)\mathrm{d}x}{\int_{a}^{b}\phi_{i}(x)^2\mathrm{d}x},\quad i = 1, \dots, n
 $$
 
-# フーリエ級数とフーリエ変換
+# フーリエ級数とフーリエ係数
 
 唐突ではあるが、ここで区間 $[-\pi, \pi]$ における $\frac{1}{2},\quad \cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ について考えると、以下のようにしてこれらの関数が直交関数系であることを示すことができる。
 
@@ -187,3 +187,93 @@ b_{k} = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin{kx}\mathrm{d}x
 $$
 
 この $\frac{1}{2},\quad \cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ を用いた直交関数展開をフーリエ級数と呼び、 $a_{0}, a_{k}, b_{k}$ の係数をフーリエ係数と呼ぶ。
+
+これまでは区間 $[-\pi, \pi]$ での $\frac{1}{2},\quad \cos{kx},\quad \sin{kx},\quad k = 1, 2, \dots$ を用いた直交関数展開を考えてきたが、ここで一般の幅 $T$ の区間 $[-\frac{T}{2}, \frac{T}{2}]$ でのフーリエ級数を考える。上式において $x = \frac{2\pi t}{T}$ と置くと、 $-\pi \leqq x \leqq \pi$ のとき $-\frac{T}{2} \leqq t \leqq \frac{T}{2}$、 $\mathrm{d}x = \frac{2\pi}{T}\mathrm{d}t$ となる。さらに範囲 $[-\frac{T}{2}, \frac{T}{2}]$ において $\omega_{o} = \frac{2\pi}{T}$ と置くと $x = \omega_{o}t,\quad dx = \omega_{o}dt$ となり、
+
+$$
+f(t) = \frac{a_{0}}{2} + \sum_{k=1}^{\infin}(a_{k}\cos{k\omega_{o}t + b_{k}\sin{k\omega_{o}t}})
+$$
+
+$$
+a_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\cos{k\omega_{o}t}\mathrm{d}t,\quad
+b_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\sin{k\omega_{o}t}\mathrm{d}t
+$$
+
+と表すことができる。この $\omega_{o}$ を基本周波数、 $a_{k}, b_{k}$ を実フーリエ係数と呼ぶ。
+
+# オイラーの式と複素フーリエ係数
+指数部が虚数の指数関数 $e^{i\theta}$ を以下のように定義する。
+
+$$
+e^{i\theta} = \cos{\theta} + i\sin{\theta}
+$$
+
+この式をオイラーの式と呼ぶ。
+
+オイラーの式において $\theta = -\theta$ と置き換えると
+
+$$
+e^{-i\theta} = \cos{\theta} - i\sin{\theta}
+$$
+
+これら 2 式を足し引きすることで以下の関係をみちびける。
+
+$$
+\cos{\theta} = \frac{e^{i\theta} + e^{-i\theta}}{2},\quad
+\sin{\theta} = \frac{e^{i\theta} - e^{-i\theta}}{2i}
+$$
+
+この式を用いてフーリエ級数を変形すると、
+
+$$
+\begin{align*}
+f(t)
+&= \frac{a_{0}}{2} + \sum_{k=1}^{\infin}\left(a_{k}\frac{e^{ik\omega_{o}t} + e^{-ik\omega_{o}t}}{2} + b_{k}\frac{e^{ik\omega_{o}t} - e^{-ik\omega_{o}t}}{2i}\right) \\
+&= \frac{a_{0}}{2} + \frac{1}{2}\sum_{k=1}^{\infin}\left((a_{k} - ib_{k})e^{ik\omega_{o}t}+(a_{k} + ib_{k})e^{-ik\omega_{o}t}\right) \\
+&= \sum_{-\infin}^{\infin}C_{k}e^{ik\omega_{o}t}
+\end{align*}
+$$
+
+ただし、
+
+$$
+C_{k} =
+\begin{cases}
+\frac{(a_{k} - ib_{k})}{2} & k \gt 0 \\
+\frac{a_{0}}{2} & k = 0 \\
+\frac{(a_{-k} + ib_{-k})}{2} & k \lt 0
+\end{cases}
+$$
+
+$C_{k} の各場合分けについて、 $a_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\cos{k\omega_{o}t}\mathrm{d}t,\quad b_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\sin{k\omega_{o}t}\mathrm{d}t$ を代入すると
+
+$$
+\begin{align*}
+\frac{(a_{k} - ib_{k})}{2}
+&= \frac{2}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)\frac{\cos{k\omega_{o}t} - i\sin{k\omega_{o}t}}{2}\mathrm{d}t \\
+&= \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t
+\end{align*}
+$$
+
+$$
+\frac{a_{0}}{2} = \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\mathrm{d}t
+$$
+
+$$
+\begin{align*}
+\frac{(a_{-k} + ib_{-k})}{2}
+&= \frac{2}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)\frac{\cos{(-k\omega_{o}t)} + i\sin{(-k\omega_{o}t)}}{2}\mathrm{d}t \\
+&= \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)(\cos{k\omega_{o}t} - i\sin{k\omega_{o}t)}\mathrm{d}t \\
+&= \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t
+\end{align*}
+$$
+
+すなわち、以下のようにまとめられる。
+
+$$
+f(t) = \sum_{-\infin}^{\infin}C_{k}e^{ik\omega_{o}t},\quad C_{k} = \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t
+$$
+
+$C_{k}$ を複素フーリエ係数と呼ぶ。
+
+# フーリエ変換
