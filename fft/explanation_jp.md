@@ -61,7 +61,7 @@ $$
 
 ## 直交とは
 
-区間 $[a, b]$ 上の関数 $f(x), g(x)$ が $\int_{a}^{b}f(x)g(x)\mathrm{d}x = 0$ を満たすとき、$f(x)$, $g(x)$ は直交するという。
+区間 $[a, b]$ 上の関数 $f(x), g(x)$ が $\int_{a}^{b}f(x)g(x)\mathrm{d}x = 0$ を満たすとき、$f(x), g(x)$ は直交するという。
 また、関数 $\phi_{0}(x), \phi_{1}(x), \dots, \phi_{n}(x)$ が $\int_{a}^{b}\phi_{i}(x)\phi_{j}(x)\mathrm{d}x = 0,\quad i \ne j$ を満たすとき、これらの関数は区間 $[a, b]$ 上の直交関数系であるという。
 
 ## 直交関数系で近似するときの正規方程式
@@ -245,7 +245,7 @@ C_{k} =
 \end{cases}
 $$
 
-$C_{k} の各場合分けについて、 $a_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\cos{k\omega_{o}t}\mathrm{d}t,\quad b_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\sin{k\omega_{o}t}\mathrm{d}t$ を代入すると
+$C_{k}$ の各場合分けについて、 $a_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\cos{k\omega_{o}t}\mathrm{d}t,\quad b_{k} = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)\sin{k\omega_{o}t}\mathrm{d}t$ を代入すると
 
 $$
 \begin{align*}
@@ -312,4 +312,4 @@ f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}\mathrm{d}\ome
 F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}\mathrm{d}t
 $$
 
-第 2 式を信号 $f(t)$ のフーリエ変換、その逆変換である第 1 式を逆フーリエ変換と呼ぶ。逆フーリエ変換は信号 $f(t)$ をあらゆる周波数の振動の重ね合わせで表すものである。 $F(\omega)$ は周波数 $\omega$ の成分 $e^{i\omega t}$ の大きさを表し、 $f(t) のスペクトルと呼ばれる。
+第 2 式を信号 $f(t)$ のフーリエ変換、その逆変換である第 1 式を逆フーリエ変換と呼ぶ。逆フーリエ変換は信号 $f(t)$ をあらゆる周波数の振動の重ね合わせで表すものである。 $F(\omega)$ は周波数 $\omega$ の成分 $e^{i\omega t}$ の大きさを表し、 $f(t)$ のスペクトルと呼ばれる。
