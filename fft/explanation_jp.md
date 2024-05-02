@@ -324,9 +324,9 @@ $$
 
 $$
 \begin{align*}
-\int_{-\infty}^{\infty}f(t)*g(t)e^{-i\omega t}\mathrm{d}t
+\int_{-\infty}^{\infty}f(t) * g(t)e^{-i\omega t}\mathrm{d}t
 &= \int_{-\infty}^{\infty}\left(\int_{-\infty}^{\infty}f(s)g(t-s)\mathrm{d}s\right)e^{-i\omega t}\mathrm{d}t \\
-&= \int_{-\infty}^{\infty}f(s)\left(\int_{-\infty}^{\infty}g(t-s)e^{-i\omega t}\mathrm{d}t\right)\mathrm{d}s \\
+&= \int_{-\infty}^{\infty}f(s)\left(\int_{-\infty}^{\infty}g(t-s)e^{-i\omega t}\mathrm{d}t\right)\mathrm{d}s
 \end{align*}
 $$
 
