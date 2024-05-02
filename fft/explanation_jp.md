@@ -271,9 +271,45 @@ $$
 すなわち、以下のようにまとめられる。
 
 $$
-f(t) = \sum_{-\infty}^{\infty}C_{k}e^{ik\omega_{o}t},\quad C_{k} = \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t
+f(t) = \sum_{k=-\infty}^{\infty}C_{k}e^{ik\omega_{o}t},\quad C_{k} = \frac{1}{T}\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t
 $$
 
 $C_{k}$ を複素フーリエ係数と呼ぶ。
 
 # フーリエ変換
+
+複素フーリエ係数を用いたフーリエ級数への展開の式において、 $\omega_{k} = k\omega_{o},\quad k = 0, \pm1, \pm2, \dots$ と置き、
+
+$$
+\Delta\omega = \omega_{k+1} - \omega_{k} = \omega_{o} = \frac{2\pi}{T},\quad
+C_{k} = \frac{F(\omega_{k})}{T}
+$$
+
+と書くと、以下のような式が得られる。
+
+$$
+\begin{align*}
+f(t)
+&= \sum_{k=-\infty}^{\infty}C_{k}e^{ik\omega_{o}t} \\
+&= \sum_{k=-\infty}^{\infty}\frac{F(\omega_{k})}{T}e^{i\omega_{k}t} \\
+&= \frac{1}{2\pi}\sum_{k=-\infty}^{\infty}F(\omega_{k})e^{i\omega_{k}t}\Delta\omega
+\end{align*}
+$$
+
+$$
+\begin{align*}
+F(\omega_{k})
+&= TC_{k} \\
+&=\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-ik\omega_{o}t}\mathrm{d}t \\
+&=\int_{-{\frac{T}{2}}}^{\frac{T}{2}}f(t)e^{-i\omega_{k}t}\mathrm{d}t
+\end{align*}
+$$
+
+周期 $T \to \infty$ とすると $\Delta\omega \to 0$ となり、 $f(t)$ も積分で表すことができ、以下のようになる。
+
+$$
+f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}\mathrm{d}\omega,\quad
+F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}\mathrm{d}t
+$$
+
+第 2 式を信号 $f(t)$ のフーリエ変換、その逆変換である第 1 式を逆フーリエ変換と呼ぶ。逆フーリエ変換は信号 $f(t)$ をあらゆる周波数の振動の重ね合わせで表すものである。 $F(\omega)$ は周波数 $\omega$ の成分 $e^{i\omega t}$ の大きさを表し、 $f(t) のスペクトルと呼ばれる。
