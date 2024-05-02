@@ -276,7 +276,7 @@ $$
 
 $C_{k}$ を複素フーリエ係数と呼ぶ。
 
-# フーリエ変換
+# フーリエ変換とたたみこみ積分 (合成積)
 
 複素フーリエ係数を用いたフーリエ級数への展開の式において、 $\omega_{k} = k\omega_{o},\quad k = 0, \pm1, \pm2, \dots$ と置き、
 
@@ -313,3 +313,31 @@ F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}\mathrm{d}t
 $$
 
 第 2 式を信号 $f(t)$ のフーリエ変換、その逆変換である第 1 式を逆フーリエ変換と呼ぶ。逆フーリエ変換は信号 $f(t)$ をあらゆる周波数の振動の重ね合わせで表すものである。 $F(\omega)$ は周波数 $\omega$ の成分 $e^{i\omega t}$ の大きさを表し、 $f(t)$ のスペクトルと呼ばれる。
+
+信号 $f(t), g(t)$ のたたみこみ積分 (合成積) $f(t) * g(t)$ は以下のように定義される。
+
+$$
+f(t) * g(t) = \int_{-\infty}^{\infty}f(s)g(t-s)\mathrm{d}s
+$$
+
+信号 $f(t), g(t)$ のフーリエ変換をそれぞれ $F(\omega), G(\omega)$ とするとき、たたみこみ積分 $f(t)*g(t)$ のフーリエ変換は $F(\omega)G(\omega)$ になる。これは以下のような式変形によって示すことができる。
+
+$$
+\begin{align*}
+\int_{-\infty}^{\infty}f(t)*g(t)e^{-i\omega t}\mathrm{d}t
+&= \int_{-\infty}^{\infty}\left(\int_{-\infty}^{\infty}f(s)g(t-s)\mathrm{d}s\right)e^{-i\omega t}\mathrm{d}t \\
+&= \int_{-\infty}^{\infty}f(s)\left(\int_{-\infty}^{\infty}g(t-s)e^{-i\omega t}\mathrm{d}t\right)\mathrm{d}s \\
+\end{align*}
+$$
+
+ここで $t' = t - s$ と置くと $t = t' + s,\quad dt = dt'$ なので
+
+$$
+\begin{align*}
+\int_{-\infty}^{\infty}f(s)\left(\int_{-\infty}^{\infty}g(t-s)e^{-i\omega t}\mathrm{d}t\right)\mathrm{d}s
+&= \int_{-\infty}^{\infty}f(s)\left(\int_{-\infty}^{\infty}g(t')e^{-i\omega(t'+s)}\mathrm{d}t'\right)\mathrm{d}s \\
+&= \int_{-\infty}^{\infty}f(s)\left(\int_{-\infty}^{\infty}g(t')e^{-i\omega t'}\mathrm{d}t'\right)e^{-i\omega s}\mathrm{d}s \\
+&= \left(\int_{-\infty}^{\infty}f(s)e^{-i\omega s}\mathrm{d}s\right)\left(\int_{-\infty}^{\infty}g(t')e^{-i\omega t'}\mathrm{d}t'\right) \\
+&= F(\omega)G(\omega)
+\end{align*}
+$$
